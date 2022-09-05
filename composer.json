@@ -1,0 +1,42 @@
+{
+  "name": "micronative/mock-broker",
+  "description": "Mock Message Broker",
+  "keywords": [
+    "Microservice",
+    "Event",
+    "Message",
+    "Broker"
+  ],
+  "homepage": "https://github.com/micronative/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ken Ngo",
+      "email": "ngodinhloc@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/micronative/file-cache"
+    }
+  ],
+  "require": {
+    "php": "^7.4||^8.0",
+    "micronative/file-cache": "^1.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Micronative\\MockBroker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev"
+}
