@@ -39,4 +39,10 @@ class BrokerTest extends BaseTestCase
         $message = $this->broker->pull('user.events');
         $this->assertEquals('hello', $message);
     }
+
+    public function testPullReturnNull()
+    {
+        $message = $this->broker->pull('none.existing.topic');
+        $this->assertNull($message);
+    }
 }
