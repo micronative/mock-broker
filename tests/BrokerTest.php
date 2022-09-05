@@ -6,31 +6,37 @@ use Micronative\MockBroker\Broker;
 
 class BrokerTest extends BaseTestCase
 {
-    private static ?Broker $broker = null;
+    private ?Broker $broker = null;
 
     protected function setUp(): void
     {
         parent::setUp();
-        if (!static::$broker) {
-            static::$broker = new Broker(__DIR__);
+        if (!$this->broker) {
+            $this->broker = new Broker(__DIR__);
         }
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        unset($this->broker);
     }
 
     public function testSettersAndGetters()
     {
-        static::$broker->setMessages([]);
-        $this->assertEquals([], static::$broker->getMessages());
+        $this->broker->setMessages([]);
+        $this->assertEquals([], $this->broker->getMessages());
     }
 
     public function testPush()
     {
-        static::$broker->push('hello', 'user.events');
-        $this->assertIsArray(static::$broker->getMessages());
+        $this->broker->push('hello', 'user.events');
+        $this->assertIsArray($this->broker->getMessages());
     }
 
     public function testPull()
     {
-        $message = static::$broker->pull('user.events');
+        $message = $this->broker->pull('user.events');
         $this->assertEquals('hello', $message);
     }
 }

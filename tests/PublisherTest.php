@@ -8,21 +8,21 @@ use Micronative\MockBroker\Publisher;
 class PublisherTest extends BaseTestCase
 {
     private Publisher $publisher;
-    private static ?Broker $broker = null;
+    private ?Broker $broker = null;
 
     protected function setUp(): void
     {
         parent::setUp();
-        if (!static::$broker) {
-            static::$broker = new Broker(__DIR__);
+        if (!$this->broker) {
+            $this->broker = new Broker(__DIR__);
         }
 
-        $this->publisher = new Publisher(static::$broker);
+        $this->publisher = new Publisher($this->broker);
     }
 
     public function testPublish()
     {
         $this->publisher->publish('hello', 'user.events');
-        $this->assertIsArray(static::$broker->getMessages());
+        $this->assertIsArray($this->broker->getMessages());
     }
 }
