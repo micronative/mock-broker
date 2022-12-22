@@ -23,7 +23,8 @@
   ],
   "require": {
     "php": "^7.4||^8.0",
-    "micronative/file-cache": "^1.0.0"
+    "micronative/file-cache": "^1.0.0",
+    "google/protobuf": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0"
@@ -35,7 +36,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "Tests\\": "tests/",
+      "Protobuf\\" : "samples/Protobuf"
     }
   },
   "minimum-stability": "dev"
