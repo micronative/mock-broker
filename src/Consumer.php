@@ -17,7 +17,7 @@ class Consumer implements ConsumerInterface
 
     /**
      * @param string $topic
-     * @return null
+     * @return null|string
      */
     public function consume(string $topic)
     {

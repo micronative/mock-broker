@@ -1,0 +1,9 @@
+syntax = "proto3";
+package Protobuf.Messages;
+option php_generic_services = true;
+option php_metadata_namespace = "Protobuf/Metadata";
+
+message User {
+  string name = 1;
+  string email = 2;
+}
