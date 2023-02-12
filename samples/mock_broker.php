@@ -17,12 +17,12 @@ try {
     $user
         ->setName('Ken Ngo')
         ->setEmail('kenngo@micronative.com');
-    $publisher->publish($user->serializeToJsonString(), TOPIC);
+    $publisher->publish($user->serializeToString(), TOPIC);
 
     $consumer = new \Micronative\MockBroker\Consumer($broker);
     $message = $consumer->consume(TOPIC);
     $newUser = new User();
-    $newUser->mergeFromJsonString($message);
+    $newUser->mergeFromString($message);
 } catch (Exception $e) {
     echo $e->getMessage();
 }
