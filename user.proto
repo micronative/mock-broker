@@ -4,7 +4,7 @@ option php_generic_services = true;
 option php_metadata_namespace = "Protobuf/Metadata";
 
 message User {
-  int64 id = 1;
-  string email = 2;
-  string phone = 3;
+    int64 id = 1;
+    string phone = 2;
+    string email = 3;
 }

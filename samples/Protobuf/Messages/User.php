@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class User extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>int64 id = 1;</code>
      */
-    protected $name = '';
+    protected $id = 0;
     /**
      * Generated from protobuf field <code>string email = 2;</code>
      */
     protected $email = '';
+    /**
+     * Generated from protobuf field <code>string phone = 3;</code>
+     */
+    protected $phone = '';
 
     /**
      * Constructor.
@@ -28,8 +32,9 @@ class User extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
+     *     @type int|string $id
      *     @type string $email
+     *     @type string $phone
      * }
      */
     public function __construct($data = NULL) {
@@ -38,23 +43,23 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @return int|string
      */
-    public function getName()
+    public function getId()
     {
-        return $this->name;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setName($var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
+        GPBUtil::checkInt64($var);
+        $this->id = $var;
 
         return $this;
     }
@@ -77,6 +82,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string phone = 3;</code>
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string phone = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPhone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->phone = $var;
 
         return $this;
     }

@@ -16,11 +16,13 @@ class User
         }
         $pool->internalAddGeneratedFile(
             '
-v
-samples/Protobuf/User.protoProtobuf.Messages"#
-User
-name (	
-email (	BÐâProtobuf/Metadatabproto3'
+ƒ
+samples/Protobuf/User.protoProtobuf.Messages"0
+User
+
+id (
+email (	
+phone (	BÐâProtobuf/Metadatabproto3'
         , true);
 
         static::$is_initialized = true;
